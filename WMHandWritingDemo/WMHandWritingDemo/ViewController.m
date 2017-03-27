@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "WMView.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+   
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    imageView.image = [UIImage imageNamed:@"bg-1"];
+    [self.view insertSubview:imageView atIndex:0];
+    
+    
+    WMView *viewPoem = [[WMView alloc]initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, 50) message:@"大家好"];
+    
+    [self.view addSubview:viewPoem];
 }
 
 
